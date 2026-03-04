@@ -74,7 +74,7 @@ export const testimonialsContent = {
     {
       quote: "Helped with team building, finding compassion, and building a statement of purpose for our team.",
       author: "Millie",
-      role: "Team Lead",
+      role: "Ward Manager",
     },
     {
       quote: "An opportunity to come together and learn from each other's experience.",
@@ -109,7 +109,7 @@ export const faqContent = {
   faqs: [
     {
       question: "What types of organisations do you work with?",
-      answer: "We work with a wide range of organisations across sectors including healthcare, education, corporate, and the third sector. Our approach is tailored to your specific context, culture, and goals — there is no one-size-fits-all delivery.",
+      answer: "We work with a wide range of organisations across sectors including healthcare, education, corporate, and the third sector. Our approach is tailored to your specific context, culture, and goals. There is no one-size-fits-all delivery.",
     },
     {
       question: "Are sessions delivered in person or online?",
@@ -117,11 +117,11 @@ export const faqContent = {
     },
     {
       question: "How long does a workshop typically last?",
-      answer: "Workshop length varies depending on the topic and your team's needs. Most workshops run for a half day (3–4 hours) or a full day (6–7 hours). We can also design shorter focused sessions or multi-day programmes.",
+      answer: "Workshop length varies depending on the topic and your team's needs. Most workshops run for a half day (3 to 4 hours) or a full day (6 to 7 hours). We can also design shorter focused sessions or multi-day programmes.",
     },
     {
       question: "Can you create a bespoke programme for our organisation?",
-      answer: "Absolutely. All of our work begins with a conversation to understand your team, your challenges, and your goals. We then design content specifically around what your organisation needs rather than delivering off-the-shelf material.",
+      answer: "Absolutely. All of our work begins with a conversation to understand your team, your challenges, and your goals. We then design content specifically around what your organisation needs, rather than delivering off-the-shelf material.",
     },
     {
       question: "How do I get started?",

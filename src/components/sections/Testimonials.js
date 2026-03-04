@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 function TestimonialCard({ testimonial }) {
   return (
-    <article className="bg-white dark:bg-night-raised rounded-lg p-8 shadow-card relative h-full flex flex-col">
+    <article className="bg-white dark:bg-night-muted rounded-lg p-8 shadow-card dark:ring-1 dark:ring-night-border relative h-full flex flex-col">
       {/* Quote Icon */}
       <div className="absolute -top-4 left-6">
         <div className="w-10 h-10 bg-brand-nude dark:bg-night-muted rounded-full flex items-center justify-center">

@@ -1,0 +1,21 @@
+{
+  "name": "The Leadership Method",
+  "short_name": "Leadership Method",
+  "description": "Workshops | Coaching | Organisational Development",
+  "icons": [
+    {
+      "src": "/icon1.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4A4A4A",
+  "background_color": "#FAFAF8",
+  "display": "standalone",
+  "start_url": "/"
+}

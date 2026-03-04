@@ -36,64 +36,67 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-brand-off-white/95 dark:bg-night/95 backdrop-blur-sm shadow-card"
-          : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <Image
-              src="/images/Logo.jpg"
-              alt={siteConfig.name}
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
-            <span className="hidden sm:block font-serif text-lg font-semibold text-brand-charcoal dark:text-night-text transition-colors">
-              {siteConfig.name}
-            </span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-brand-charcoal dark:text-night-text transition-colors hover:text-brand-charcoal-dark dark:hover:text-night-accent"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="px-4 py-2 bg-brand-charcoal dark:bg-night-accent text-white dark:text-night rounded-md text-sm font-medium hover:bg-brand-charcoal-dark dark:hover:bg-brand-cream transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal dark:focus-visible:ring-night-accent focus-visible:ring-offset-2"
-            >
-              Get in Touch
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          isScrolled
+            ? "bg-brand-off-white/95 dark:bg-night/95 backdrop-blur-sm shadow-card"
+            : "bg-transparent"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <a href="#" className="flex items-center gap-2">
+              <Image
+                src="/images/Logo.jpg"
+                alt={siteConfig.name}
+                width={48}
+                height={48}
+                className="rounded-full"
+              />
+              <span className="hidden sm:block font-serif text-lg font-semibold text-brand-charcoal dark:text-night-text transition-colors">
+                {siteConfig.name}
+              </span>
             </a>
-          </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            ref={menuButtonRef}
-            className="md:hidden p-2 text-brand-charcoal dark:text-night-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal dark:focus-visible:ring-night-accent focus-visible:ring-offset-2 rounded-md"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-nav"
-          >
-            {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-          </button>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-brand-charcoal dark:text-night-text transition-colors hover:text-brand-charcoal-dark dark:hover:text-night-accent"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="px-4 py-2 bg-brand-charcoal dark:bg-night-accent text-white dark:text-night rounded-md text-sm font-medium hover:bg-brand-charcoal-dark dark:hover:bg-brand-cream transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal dark:focus-visible:ring-night-accent focus-visible:ring-offset-2"
+              >
+                Get in Touch
+              </a>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              ref={menuButtonRef}
+              className="md:hidden p-2 text-brand-charcoal dark:text-night-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal dark:focus-visible:ring-night-accent focus-visible:ring-offset-2 rounded-md"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav"
+            >
+              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — sibling of <header>, NOT a child, to avoid backdrop-filter
+          creating a new containing block that breaks fixed positioning in Chrome/Safari */}
       <div
         id="mobile-nav"
         aria-hidden={!isMenuOpen}
@@ -122,6 +125,6 @@ export default function Header() {
           </a>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

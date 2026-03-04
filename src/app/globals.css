@@ -40,6 +40,7 @@
 }
 
 :root {
+  color-scheme: light;
   --background: #FAFAF8;
   --foreground: #4A4A4A;
 }
@@ -47,6 +48,7 @@
 /* ── Dark mode: flip root vars ──────────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark; /* tells browser to render native controls dark */
     --background: #1A1816;
     --foreground: #EDE8E2;
   }

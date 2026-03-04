@@ -18,7 +18,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-24">
         {/* Logo */}
         <div className="mb-8 flex justify-center">
           <Image
@@ -37,7 +37,7 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft mb-10 font-light italic">
+        <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft mb-6 font-light italic">
           {siteConfig.tagline}
         </p>
 

@@ -41,11 +41,24 @@ export const metadata = {
     description: "Evidence-based leadership workshops and coaching. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
     images: ["/images/Logo.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon0.svg", type: "image/svg+xml" },
+      { url: "/icon1.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+  },
+  manifest: "/manifest.json",
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF8" },
+    { media: "(prefers-color-scheme: dark)", color: "#1A1816" },
+  ],
 };
 
 const structuredData = {
@@ -58,7 +71,10 @@ const structuredData = {
       url: SITE_URL,
       email: "theleadershipmethod@gmail.com",
       description: "Evidence-based leadership workshops, coaching and organisational development.",
-      sameAs: ["https://instagram.com/theleadershipmethod_"],
+      sameAs: [
+        "https://instagram.com/theleadershipmethod_",
+        "https://www.linkedin.com/in/priyankaayodele/",
+      ],
       founder: {
         "@type": "Person",
         name: "Priyanka Ayodele",

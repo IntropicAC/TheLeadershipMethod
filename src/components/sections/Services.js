@@ -23,7 +23,7 @@ export default function Services() {
           return (
             <div
               key={index}
-              className="bg-brand-charcoal-dark dark:bg-night-raised rounded-lg p-8 hover:bg-brand-charcoal dark:hover:bg-night-muted transition-colors shadow-card"
+              className="bg-brand-charcoal-dark dark:bg-night-raised rounded-lg p-8 hover:bg-brand-charcoal dark:hover:bg-night-muted transition-colors shadow-card dark:ring-1 dark:ring-night-border"
             >
               {/* Icon */}
               <div className="w-14 h-14 mb-6 bg-brand-nude dark:bg-night-muted rounded-full flex items-center justify-center">

@@ -10,9 +10,9 @@ export default function Card({
     <div
       className={cn(
         "rounded-lg p-6 transition-all duration-200",
-        variant === "light" && "bg-white shadow-card hover:shadow-card-hover dark:bg-night-raised dark:text-night-text",
-        variant === "dark"  && "bg-brand-charcoal-dark text-white dark:bg-night-muted dark:text-night-text",
-        variant === "nude"  && "bg-brand-nude dark:bg-night-raised dark:text-night-text",
+        variant === "light" && "bg-white shadow-card hover:shadow-card-hover dark:bg-night-raised dark:text-night-text dark:ring-1 dark:ring-night-border",
+        variant === "dark"  && "bg-brand-charcoal-dark text-white dark:bg-night-muted dark:text-night-text dark:ring-1 dark:ring-night-border",
+        variant === "nude"  && "bg-brand-nude dark:bg-night-raised dark:text-night-text dark:ring-1 dark:ring-night-border",
         className
       )}
       {...props}

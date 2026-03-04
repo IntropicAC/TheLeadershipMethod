@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/constants";
 
@@ -80,8 +81,16 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-700 dark:border-night-border text-center text-gray-400 dark:text-night-soft text-sm">
+        <div className="mt-12 pt-8 border-t border-gray-700 dark:border-night-border text-center text-gray-400 dark:text-night-soft text-sm space-y-2">
           <p>&copy; {currentYear} {siteConfig.name}. All rights reserved.</p>
+          <p>
+            <Link
+              href="/privacy"
+              className="hover:text-white transition-colors underline underline-offset-2"
+            >
+              Privacy Policy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

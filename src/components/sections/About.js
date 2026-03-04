@@ -8,16 +8,16 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="relative order-1 lg:order-1">
-          <div className="relative aspect-[4/5] max-w-[180px] sm:max-w-[260px] lg:max-w-[340px] mx-auto lg:mx-0">
+          <div className="relative aspect-[4/5] max-w-[240px] sm:max-w-[290px] lg:max-w-[340px] mx-auto lg:mx-0">
             <Image
               src="/images/priyanka-headshot.jpg"
               alt={`${siteConfig.founder} - Founder of ${siteConfig.name}`}
               fill
-              sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 290px, 340px"
               className="object-cover rounded-lg shadow-xl"
             />
             {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-brand-nude rounded-lg -z-10" />
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-brand-nude dark:border-night-border rounded-lg -z-10" />
           </div>
         </div>
 

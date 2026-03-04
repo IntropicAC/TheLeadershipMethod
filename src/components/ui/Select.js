@@ -24,11 +24,11 @@ export default function Select({
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          "w-full px-4 py-2.5 rounded-md border border-gray-300 shadow-input",
+          "w-full px-4 py-2.5 rounded-md border border-brand-charcoal/20 shadow-input",
           "bg-white text-brand-charcoal",
           "dark:bg-night-raised dark:border-night-border dark:text-night-text",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:border-transparent",
-          "dark:focus-visible:ring-night-accent",
+          "dark:focus-visible:ring-night-accent dark:focus-visible:ring-offset-night",
           "transition-colors duration-200",
           "appearance-none cursor-pointer",
           error && "border-red-400 focus-visible:ring-red-500 dark:border-red-700",

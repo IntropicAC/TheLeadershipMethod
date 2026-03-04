@@ -65,27 +65,38 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    const payload = {
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+      subject: `New Enquiry: ${formData.service}`,
+      from_name: "The Leadership Method Website",
+      ...formData,
+    };
+
+    console.log("[Contact] Submitting to Web3Forms:", {
+      ...payload,
+      access_key: payload.access_key ? "***set***" : "MISSING – check .env.local",
+    });
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          subject: `New Enquiry: ${formData.service}`,
-          from_name: "The Leadership Method Website",
-          ...formData,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
+      console.log("[Contact] Web3Forms response:", data);
 
       if (data.success) {
+        console.log("[Contact] ✓ Email sent successfully");
         setIsSubmitted(true);
         setFormData({ name: "", email: "", service: "", message: "" });
       } else {
-        setSubmitError("Something went wrong. Please try again or email us directly.");
+        console.error("[Contact] ✗ Web3Forms error:", data.message);
+        setSubmitError(data.message || "Something went wrong. Please try again or email us directly.");
       }
-    } catch {
+    } catch (err) {
+      console.error("[Contact] ✗ Network error:", err);
       setSubmitError("Something went wrong. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);
@@ -184,7 +195,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white dark:bg-night-raised rounded-lg p-8 shadow-card">
+        <div className="bg-white dark:bg-night-raised rounded-lg p-8 shadow-card dark:ring-1 dark:ring-night-border">
           {isSubmitted ? (
             <div role="status" className="text-center py-12">
               <CheckCircle size={64} className="text-green-500 mx-auto mb-4" aria-hidden="true" />
@@ -204,6 +215,9 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — hidden from humans, bots fill it in and Web3Forms rejects the submission */}
+              <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" readOnly />
+
               <Input
                 label="Name"
                 id="name"

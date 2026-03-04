@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
   return (
     <SectionWrapper id="why-us" background="light">
       <div className="text-center mb-12">
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-4">
+        <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
           {whyChooseUsContent.title}
         </h2>
       </div>
@@ -24,17 +24,17 @@ export default function WhyChooseUs() {
           return (
             <Card key={index} variant="light" className="text-center p-8">
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 bg-brand-nude rounded-full flex items-center justify-center">
-                <Icon size={32} className="text-brand-charcoal" />
+              <div className="w-16 h-16 mx-auto mb-6 bg-brand-nude dark:bg-night-muted rounded-full flex items-center justify-center">
+                <Icon size={32} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-xl font-semibold text-brand-charcoal mb-4">
+              <h3 className="font-serif text-subheading font-semibold text-brand-charcoal dark:text-night-text mb-4">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-brand-charcoal/70 leading-relaxed">
+              <p className="text-brand-charcoal/70 dark:text-night-soft leading-relaxed">
                 {item.description}
               </p>
             </Card>

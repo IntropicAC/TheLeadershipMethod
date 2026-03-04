@@ -1,4 +1,4 @@
-import { Users, MessageCircle, Building2 } from "lucide-react";
+import { Users, MessageCircle, Building2, Check } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { servicesContent } from "@/lib/constants";
 
@@ -12,7 +12,7 @@ export default function Services() {
   return (
     <SectionWrapper id="services" background="dark">
       <div className="text-center mb-12">
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="font-serif text-heading font-bold mb-4">
           {servicesContent.title}
         </h2>
       </div>
@@ -23,15 +23,15 @@ export default function Services() {
           return (
             <div
               key={index}
-              className="bg-brand-charcoal-dark rounded-lg p-8 hover:bg-[#353535] transition-colors"
+              className="bg-brand-charcoal-dark dark:bg-night-raised rounded-lg p-8 hover:bg-brand-charcoal dark:hover:bg-night-muted transition-colors shadow-card"
             >
               {/* Icon */}
-              <div className="w-14 h-14 mb-6 bg-brand-nude rounded-full flex items-center justify-center">
-                <Icon size={28} className="text-brand-charcoal" />
+              <div className="w-14 h-14 mb-6 bg-brand-nude dark:bg-night-muted rounded-full flex items-center justify-center">
+                <Icon size={28} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
               </div>
 
               {/* Title */}
-              <h3 className="font-serif text-xl font-semibold mb-4 text-brand-nude">
+              <h3 className="font-serif text-subheading font-semibold mb-4 text-brand-nude dark:text-night-accent">
                 {service.title}
               </h3>
 
@@ -40,9 +40,11 @@ export default function Services() {
                 {service.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="flex items-start gap-2 text-gray-300"
+                    className="flex items-start gap-3 text-gray-300"
                   >
-                    <span className="text-brand-nude mt-1.5">•</span>
+                    <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-brand-nude/15 flex items-center justify-center">
+                      <Check size={11} className="text-brand-nude" aria-hidden="true" strokeWidth={3} />
+                    </span>
                     <span className="text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}

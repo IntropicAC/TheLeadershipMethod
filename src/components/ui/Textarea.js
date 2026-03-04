@@ -13,7 +13,7 @@ export default function Textarea({
       {label && (
         <label
           htmlFor={id}
-          className="text-sm font-medium text-brand-charcoal"
+          className="text-sm font-medium text-brand-charcoal dark:text-night-text"
         >
           {label}
         </label>
@@ -21,18 +21,22 @@ export default function Textarea({
       <textarea
         id={id}
         rows={rows}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          "w-full px-4 py-2.5 rounded-md border border-gray-300",
+          "w-full px-4 py-2.5 rounded-md border border-gray-300 shadow-input",
           "bg-white text-brand-charcoal",
-          "focus:outline-none focus:ring-2 focus:ring-brand-charcoal focus:border-transparent",
-          "placeholder:text-gray-400",
-          "transition-all duration-200 resize-none",
-          error && "border-red-500 focus:ring-red-500",
+          "dark:bg-night-raised dark:border-night-border dark:text-night-text",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:border-transparent",
+          "dark:focus-visible:ring-night-accent",
+          "placeholder:text-gray-400 dark:placeholder:text-night-soft",
+          "transition-colors duration-200 resize-none",
+          error && "border-red-400 focus-visible:ring-red-500 dark:border-red-700",
           className
         )}
         {...props}
       />
-      {error && <p className="text-sm text-red-500">{error}</p>}
+      {error && <p id={`${id}-error`} role="alert" className="text-sm text-red-500 dark:text-red-400">{error}</p>}
     </div>
   );
 }

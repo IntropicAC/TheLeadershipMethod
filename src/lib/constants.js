@@ -7,7 +7,7 @@ export const siteConfig = {
   email: "theleadershipmethod@gmail.com",
   instagram: "https://instagram.com/theleadershipmethod_",
   instagramHandle: "@theleadershipmethod_",
-  linkedin: "#", // To be provided by client
+  linkedin: "https://www.linkedin.com/in/priyankaayodele/",
   tagline: "Workshops | Coaching | Organisational Development",
 };
 
@@ -76,15 +76,29 @@ export const testimonialsContent = {
       author: "Millie",
       role: "Team Lead",
     },
-    // Placeholder for additional testimonials
     {
-      quote: "The Leadership Method transformed how our management team communicates and collaborates.",
-      author: "Coming Soon",
+      quote: "An opportunity to come together and learn from each other's experience.",
+      author: "Grace",
+      role: "Hospital Ward Manager",
+    },
+    {
+      quote: "An informative and supportive workshop that has strengthened an entire team.",
+      author: "Lily",
       role: "",
     },
     {
-      quote: "Evidence-based approaches that actually work in the real world.",
-      author: "Coming Soon",
+      quote: "So informative, super fun and interactive, and the most interesting team-building day I have had.",
+      author: "El",
+      role: "",
+    },
+    {
+      quote: "The workshop was useful, educative and informative.",
+      author: "Debora",
+      role: "",
+    },
+    {
+      quote: "Very helpful and helped reconnect the team.",
+      author: "Adeshola",
       role: "",
     },
   ],

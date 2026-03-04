@@ -12,10 +12,10 @@ export default function SectionWrapper({
       id={id}
       className={cn(
         "py-16 md:py-24",
-        background === "light" && "bg-brand-off-white",
-        background === "cream" && "bg-brand-cream",
-        background === "nude" && "bg-brand-nude",
-        background === "dark" && "bg-brand-charcoal text-white",
+        background === "light" && "bg-brand-off-white dark:bg-night dark:text-night-text",
+        background === "cream" && "bg-brand-cream dark:bg-night-raised dark:text-night-text",
+        background === "nude"  && "bg-brand-nude dark:bg-night-muted dark:text-night-text",
+        background === "dark"  && "bg-brand-charcoal text-white dark:bg-night-muted dark:text-night-text",
         className
       )}
       {...props}

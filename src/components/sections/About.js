@@ -8,11 +8,12 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="relative order-1 lg:order-1">
-          <div className="relative aspect-[4/5] max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] mx-auto lg:mx-0">
+          <div className="relative aspect-[4/5] max-w-[180px] sm:max-w-[260px] lg:max-w-[340px] mx-auto lg:mx-0">
             <Image
               src="/images/priyanka-headshot.jpg"
               alt={`${siteConfig.founder} - Founder of ${siteConfig.name}`}
               fill
+              sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
               className="object-cover rounded-lg shadow-xl"
             />
             {/* Decorative element */}
@@ -22,23 +23,23 @@ export default function About() {
 
         {/* Content */}
         <div className="order-2 lg:order-2">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-6">
+          <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-6">
             {aboutContent.title}
           </h2>
 
-          <p className="text-brand-charcoal/80 text-lg leading-relaxed mb-6">
+          <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft leading-relaxed mb-6">
             {aboutContent.description}
           </p>
 
           {/* Credentials */}
           <div className="flex flex-wrap gap-3 mt-8">
-            <span className="px-4 py-2 bg-brand-nude rounded-full text-sm font-medium text-brand-charcoal">
+            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
               Psychology Degree
             </span>
-            <span className="px-4 py-2 bg-brand-nude rounded-full text-sm font-medium text-brand-charcoal">
+            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
               CMgr MCMI
             </span>
-            <span className="px-4 py-2 bg-brand-nude rounded-full text-sm font-medium text-brand-charcoal">
+            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
               Assoc. CIPD
             </span>
           </div>

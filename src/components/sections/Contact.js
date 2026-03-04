@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Instagram, Linkedin, Send, CheckCircle } from "lucide-react";
+import { Mail, Instagram, Linkedin, Send, CheckCircle, Copy, Check } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
@@ -19,6 +19,16 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    await navigator.clipboard.writeText(siteConfig.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -53,22 +63,30 @@ export default function Contact() {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: `New Enquiry: ${formData.service}`,
+          from_name: "The Leadership Method Website",
+          ...formData,
+        }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", service: "", message: "" });
       } else {
-        alert("Something went wrong. Please try again.");
+        setSubmitError("Something went wrong. Please try again or email us directly.");
       }
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
+    } catch {
+      setSubmitError("Something went wrong. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -85,10 +103,10 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact" background="light">
       <div className="text-center mb-12">
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-charcoal mb-4">
+        <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
           {contactContent.title}
         </h2>
-        <p className="text-brand-charcoal/70 max-w-2xl mx-auto">
+        <p className="text-brand-charcoal/70 dark:text-night-soft max-w-2xl mx-auto">
           {contactContent.subtitle}
         </p>
       </div>
@@ -97,7 +115,7 @@ export default function Contact() {
         {/* Contact Info */}
         <div className="space-y-8">
           <div>
-            <h3 className="font-serif text-xl font-semibold text-brand-charcoal mb-6">
+            <h3 className="font-serif text-subheading font-semibold text-brand-charcoal dark:text-night-text mb-6">
               Let&apos;s Connect
             </h3>
 
@@ -105,17 +123,25 @@ export default function Contact() {
               {/* Email */}
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-4 p-4 bg-brand-cream rounded-lg hover:bg-brand-nude transition-colors group"
+                className="flex items-center gap-4 p-4 bg-brand-cream dark:bg-night-raised rounded-lg hover:bg-brand-nude dark:hover:bg-night-muted transition-colors group"
               >
-                <div className="w-12 h-12 bg-brand-nude group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
-                  <Mail size={24} className="text-brand-charcoal" />
+                <div className="w-12 h-12 bg-brand-nude dark:bg-night-muted group-hover:bg-white dark:group-hover:bg-night-border rounded-full flex items-center justify-center transition-colors">
+                  <Mail size={24} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
                 </div>
-                <div>
-                  <p className="text-sm text-brand-charcoal/60">Email us at</p>
-                  <p className="font-medium text-brand-charcoal">
-                    {siteConfig.email}
-                  </p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-brand-charcoal/60 dark:text-night-soft">Email us at</p>
+                  <p className="font-medium text-brand-charcoal dark:text-night-text break-all">{siteConfig.email}</p>
                 </div>
+                <button
+                  onClick={copyEmail}
+                  aria-label={copied ? "Email copied" : "Copy email address"}
+                  className="shrink-0 p-2 rounded-md text-brand-charcoal/40 dark:text-night-soft hover:text-brand-charcoal dark:hover:text-night-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal dark:focus-visible:ring-night-accent"
+                >
+                  {copied
+                    ? <Check size={16} className="text-green-500" aria-hidden="true" />
+                    : <Copy size={16} aria-hidden="true" />
+                  }
+                </button>
               </a>
 
               {/* Instagram */}
@@ -123,14 +149,14 @@ export default function Contact() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-brand-cream rounded-lg hover:bg-brand-nude transition-colors group"
+                className="flex items-center gap-4 p-4 bg-brand-cream dark:bg-night-raised rounded-lg hover:bg-brand-nude dark:hover:bg-night-muted transition-colors group"
               >
-                <div className="w-12 h-12 bg-brand-nude group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
-                  <Instagram size={24} className="text-brand-charcoal" />
+                <div className="w-12 h-12 bg-brand-nude dark:bg-night-muted group-hover:bg-white dark:group-hover:bg-night-border rounded-full flex items-center justify-center transition-colors">
+                  <Instagram size={24} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-brand-charcoal/60">Follow us on Instagram</p>
-                  <p className="font-medium text-brand-charcoal">
+                  <p className="text-sm text-brand-charcoal/60 dark:text-night-soft">Follow us on Instagram</p>
+                  <p className="font-medium text-brand-charcoal dark:text-night-text">
                     {siteConfig.instagramHandle}
                   </p>
                 </div>
@@ -141,14 +167,14 @@ export default function Contact() {
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-brand-cream rounded-lg hover:bg-brand-nude transition-colors group"
+                className="flex items-center gap-4 p-4 bg-brand-cream dark:bg-night-raised rounded-lg hover:bg-brand-nude dark:hover:bg-night-muted transition-colors group"
               >
-                <div className="w-12 h-12 bg-brand-nude group-hover:bg-white rounded-full flex items-center justify-center transition-colors">
-                  <Linkedin size={24} className="text-brand-charcoal" />
+                <div className="w-12 h-12 bg-brand-nude dark:bg-night-muted group-hover:bg-white dark:group-hover:bg-night-border rounded-full flex items-center justify-center transition-colors">
+                  <Linkedin size={24} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-brand-charcoal/60">Connect on LinkedIn</p>
-                  <p className="font-medium text-brand-charcoal">
+                  <p className="text-sm text-brand-charcoal/60 dark:text-night-soft">Connect on LinkedIn</p>
+                  <p className="font-medium text-brand-charcoal dark:text-night-text">
                     The Leadership Method
                   </p>
                 </div>
@@ -158,20 +184,20 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white rounded-lg p-8 shadow-sm">
+        <div className="bg-white dark:bg-night-raised rounded-lg p-8 shadow-card">
           {isSubmitted ? (
-            <div className="text-center py-12">
-              <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
-              <h3 className="font-serif text-2xl font-semibold text-brand-charcoal mb-2">
+            <div role="status" className="text-center py-12">
+              <CheckCircle size={64} className="text-green-500 mx-auto mb-4" aria-hidden="true" />
+              <h3 className="font-serif text-subheading font-semibold text-brand-charcoal dark:text-night-text mb-2">
                 Message Sent!
               </h3>
-              <p className="text-brand-charcoal/70">
+              <p className="text-brand-charcoal/70 dark:text-night-soft">
                 Thank you for reaching out. We&apos;ll get back to you soon.
               </p>
               <Button
                 variant="outline"
                 className="mt-6"
-                onClick={() => setIsSubmitted(false)}
+                onClick={() => { setIsSubmitted(false); setSubmitError(null); }}
               >
                 Send Another Message
               </Button>
@@ -225,6 +251,12 @@ export default function Contact() {
                 required
               />
 
+              {submitError && (
+                <p role="alert" className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900 rounded-md px-4 py-3">
+                  {submitError}
+                </p>
+              )}
+
               <Button
                 type="submit"
                 size="lg"
@@ -235,7 +267,7 @@ export default function Contact() {
                   "Sending..."
                 ) : (
                   <>
-                    <Send size={18} className="mr-2" />
+                    <Send size={18} className="mr-2" aria-hidden="true" />
                     Send Message
                   </>
                 )}

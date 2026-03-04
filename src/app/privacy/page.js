@@ -12,10 +12,25 @@ export const metadata = {
 
 const LAST_UPDATED = "March 2025";
 
+const SITE_URL = "https://theleadershipmethod.co.uk";
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${SITE_URL}/privacy` },
+  ],
+};
+
 export default function PrivacyPage() {
   return (
     <>
       <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           {/* Back link */}

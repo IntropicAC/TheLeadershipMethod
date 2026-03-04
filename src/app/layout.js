@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SITE_URL = "https://theleadershipmethod.co.uk"; // TODO: update when domain is live
+const SITE_URL = "https://theleadershipmethod.co.uk";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -22,7 +22,6 @@ export const metadata = {
     template: "%s | The Leadership Method",
   },
   description: "Transform your leadership and organisational culture with evidence-based workshops and coaching. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
-  keywords: ["leadership coaching", "workshops", "organisational development", "team coaching", "management training", "UK"],
   authors: [{ name: "Priyanka Ayodele" }],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
@@ -33,13 +32,21 @@ export const metadata = {
     locale: "en_GB",
     type: "website",
     url: "/",
-    images: [{ url: "/images/Logo.jpg", width: 600, height: 600, alt: "The Leadership Method" }],
+    images: [
+      {
+        url: "/images/Image-of-training-session.jpg",
+        width: 1210,
+        height: 1600,
+        alt: "The Leadership Method — leadership training session",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Leadership Method | Leadership Coaching & Workshops",
     description: "Evidence-based leadership workshops and coaching. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
-    images: ["/images/Logo.jpg"],
+    images: [{ url: "/images/Image-of-training-session.jpg", alt: "Leadership training session facilitated by The Leadership Method" }],
   },
   icons: {
     icon: [
@@ -75,8 +82,17 @@ const structuredData = {
         "https://instagram.com/theleadershipmethod_",
         "https://www.linkedin.com/in/priyankaayodele/",
       ],
+      areaServed: { "@type": "Country", name: "United Kingdom" },
+      serviceType: ["Leadership Coaching", "Workplace Workshops", "Organisational Development"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer enquiries",
+        email: "theleadershipmethod@gmail.com",
+        availableLanguage: "English",
+      },
       founder: {
         "@type": "Person",
+        "@id": `${SITE_URL}/#priyanka`,
         name: "Priyanka Ayodele",
         jobTitle: "Founder",
         hasCredential: ["CMgr MCMI", "Assoc. CIPD"],
@@ -91,6 +107,32 @@ const structuredData = {
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Team Coaching" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Organisational Support" } },
         ],
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#priyanka`,
+      name: "Priyanka Ayodele",
+      jobTitle: "Founder",
+      hasCredential: [
+        { "@type": "EducationalOccupationalCredential", credentialCategory: "CMgr MCMI" },
+        { "@type": "EducationalOccupationalCredential", credentialCategory: "Assoc. CIPD" },
+      ],
+      knowsAbout: ["Leadership Development", "Organisational Psychology", "Management Coaching", "Workplace Culture"],
+      worksFor: { "@id": `${SITE_URL}/#organisation` },
+      sameAs: ["https://www.linkedin.com/in/priyankaayodele/"],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: "The Leadership Method | Leadership Coaching & Workshops",
+      description: "Evidence-based leadership workshops, coaching and organisational development.",
+      isPartOf: { "@id": `${SITE_URL}/#organisation` },
+      about: { "@id": `${SITE_URL}/#organisation` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/Image-of-training-session.jpg`,
       },
     },
   ],

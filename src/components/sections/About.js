@@ -8,7 +8,7 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="relative order-1 lg:order-1">
-          <div className="relative aspect-[4/5] max-w-[250px] sm:max-w-[300px] lg:max-w-[350px] mx-auto lg:mx-0">
+          <div className="relative aspect-[4/5] max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] mx-auto lg:mx-0">
             <Image
               src="/images/priyanka-headshot.jpg"
               alt={`${siteConfig.founder} - Founder of ${siteConfig.name}`}

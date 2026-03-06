@@ -1,5 +1,8 @@
 // Site content and configuration
 
+// Preferred canonical origin — must match the final non-redirecting URL
+export const SITE_URL = "https://www.theleadershipmethod.co.uk";
+
 export const siteConfig = {
   name: "The Leadership Method",
   founder: "Priyanka Ayodele",
@@ -149,4 +152,20 @@ export const navLinks = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
+];
+
+// Links shown in the nav "Services" dropdown
+export const serviceDropdownLinks = [
+  { label: "Leadership Coaching", href: "/leadership-coaching" },
+  { label: "Leadership Workshops", href: "/leadership-workshops" },
+  { label: "Organisational Development", href: "/organisational-development" },
+];
+
+// All page links used in the footer (broader set)
+export const serviceLinks = [
+  { label: "Leadership Coaching", href: "/leadership-coaching" },
+  { label: "Leadership Workshops", href: "/leadership-workshops" },
+  { label: "Organisational Development", href: "/organisational-development" },
+  { label: "About", href: "/about" },
+  { label: "Insights", href: "/insights" },
 ];

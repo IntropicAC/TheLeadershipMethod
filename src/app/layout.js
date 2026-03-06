@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -13,40 +14,49 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SITE_URL = "https://theleadershipmethod.co.uk";
+// Preferred canonical origin — must match the final non-redirecting URL
+const SITE_URL = "https://www.theleadershipmethod.co.uk";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Leadership Method | Leadership Coaching & Workshops",
+    default: "Leadership Coaching & Workshops | The Leadership Method",
     template: "%s | The Leadership Method",
   },
-  description: "Transform your leadership and organisational culture with evidence-based workshops and coaching. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
+  description:
+    "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
   authors: [{ name: "Priyanka Ayodele" }],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "The Leadership Method",
-    description: "Workshops | Coaching | Organisational Development",
+    title: "Leadership Coaching & Workshops | The Leadership Method",
+    description:
+      "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
     siteName: "The Leadership Method",
     locale: "en_GB",
     type: "website",
-    url: "/",
+    url: SITE_URL + "/",
     images: [
       {
         url: "/images/Image-of-training-session.jpg",
         width: 1210,
         height: 1600,
-        alt: "The Leadership Method — leadership training session",
+        alt: "The Leadership Method, leadership training session",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Leadership Method | Leadership Coaching & Workshops",
-    description: "Evidence-based leadership workshops and coaching. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
-    images: [{ url: "/images/Image-of-training-session.jpg", alt: "Leadership training session facilitated by The Leadership Method" }],
+    title: "Leadership Coaching & Workshops | The Leadership Method",
+    description:
+      "Evidence-based leadership coaching, workshops and organisational development. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
+    images: [
+      {
+        url: "/images/Image-of-training-session.jpg",
+        alt: "Leadership training session facilitated by The Leadership Method",
+      },
+    ],
   },
   icons: {
     icon: [
@@ -72,18 +82,43 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL + "/",
+      name: "The Leadership Method",
+      description:
+        "Evidence-based leadership coaching, workshops and organisational development.",
+      publisher: { "@id": `${SITE_URL}/#organisation` },
+      inLanguage: "en-GB",
+    },
+    {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#organisation`,
       name: "The Leadership Method",
-      url: SITE_URL,
+      url: SITE_URL + "/",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/Logo.jpg`,
+        width: 150,
+        height: 150,
+      },
       email: "theleadershipmethod@gmail.com",
-      description: "Evidence-based leadership workshops, coaching and organisational development.",
+      description:
+        "Evidence-based leadership coaching, workshops and organisational development.",
       sameAs: [
         "https://instagram.com/theleadershipmethod_",
         "https://www.linkedin.com/in/priyankaayodele/",
       ],
+      // TODO: Add Google Business Profile URL here once created:
+      // "https://maps.google.com/?cid=YOUR_GBP_ID"
       areaServed: { "@type": "Country", name: "United Kingdom" },
-      serviceType: ["Leadership Coaching", "Workplace Workshops", "Organisational Development"],
+      serviceType: [
+        "Leadership Coaching",
+        "Leadership Workshops",
+        "Organisational Development",
+        "Executive Coaching",
+        "Workplace Culture",
+      ],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer enquiries",
@@ -102,10 +137,25 @@ const structuredData = {
         "@type": "OfferCatalog",
         name: "Services",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Leadership Workshops" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "1:1 Coaching" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Team Coaching" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Organisational Support" } },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Leadership Workshops" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "1:1 Leadership Coaching" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: "Team Coaching" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Organisational Development Support",
+            },
+          },
         ],
       },
     },
@@ -115,28 +165,46 @@ const structuredData = {
       name: "Priyanka Ayodele",
       jobTitle: "Founder",
       hasCredential: [
-        { "@type": "EducationalOccupationalCredential", credentialCategory: "CMgr MCMI" },
-        { "@type": "EducationalOccupationalCredential", credentialCategory: "Assoc. CIPD" },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "CMgr MCMI",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Assoc. CIPD",
+        },
       ],
-      knowsAbout: ["Leadership Development", "Organisational Psychology", "Management Coaching", "Workplace Culture"],
+      knowsAbout: [
+        "Leadership Development",
+        "Organisational Psychology",
+        "Management Coaching",
+        "Workplace Culture",
+        "Organisational Development",
+      ],
       worksFor: { "@id": `${SITE_URL}/#organisation` },
       sameAs: ["https://www.linkedin.com/in/priyankaayodele/"],
     },
     {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
-      url: SITE_URL,
-      name: "The Leadership Method | Leadership Coaching & Workshops",
-      description: "Evidence-based leadership workshops, coaching and organisational development.",
-      isPartOf: { "@id": `${SITE_URL}/#organisation` },
+      url: SITE_URL + "/",
+      name: "Leadership Coaching & Workshops | The Leadership Method",
+      description:
+        "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#organisation` },
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/Image-of-training-session.jpg`,
       },
+      inLanguage: "en-GB",
     },
   ],
 };
+
+// GA Measurement ID is set via NEXT_PUBLIC_GA_MEASUREMENT_ID in .env.local
+// Example: NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export default function RootLayout({ children }) {
   return (
@@ -147,6 +215,24 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         {children}
+
+        {/* Google Analytics 4 — only loaded when NEXT_PUBLIC_GA_MEASUREMENT_ID is set */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

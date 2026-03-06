@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Only apply hover styles on devices that genuinely support hover (e.g. mouse).
+   On touch screens this prevents buttons/links from getting "stuck" in their
+   hover state after a tap. */
+@custom-variant hover {
+  @media (hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
 @theme inline {
   /* ── Brand Palette ──────────────────────────────────────── */
   --color-brand-nude: #E8DED1;

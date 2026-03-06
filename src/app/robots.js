@@ -1,4 +1,4 @@
-const SITE_URL = "https://theleadershipmethod.co.uk";
+const SITE_URL = "https://www.theleadershipmethod.co.uk";
 
 export default function robots() {
   return {

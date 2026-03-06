@@ -12,7 +12,7 @@ export const metadata = {
 
 const LAST_UPDATED = "March 2025";
 
-const SITE_URL = "https://theleadershipmethod.co.uk";
+const SITE_URL = "https://www.theleadershipmethod.co.uk";
 
 const breadcrumbData = {
   "@context": "https://schema.org",

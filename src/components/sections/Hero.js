@@ -31,10 +31,15 @@ export default function Hero() {
           />
         </div>
 
-        {/* Title */}
-        <h1 className="font-serif text-display font-bold text-brand-charcoal dark:text-night-text mb-6">
-          {siteConfig.name}
+        {/* Primary H1 — keyword-rich for SEO */}
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal dark:text-night-text mb-3">
+          Leadership Coaching &amp; Organisational Development
         </h1>
+
+        {/* Brand name as prominent subheading */}
+        <p className="font-serif text-subheading font-semibold text-brand-charcoal/70 dark:text-night-soft mb-3">
+          {siteConfig.name}
+        </p>
 
         {/* Tagline */}
         <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft mb-6 font-light italic">

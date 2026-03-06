@@ -9,6 +9,19 @@ import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import { faqContent } from "@/lib/constants";
 
+export const metadata = {
+  title: "Leadership Coaching & Workshops | The Leadership Method",
+  description:
+    "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Leadership Coaching & Workshops | The Leadership Method",
+    description:
+      "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
+    url: "https://www.theleadershipmethod.co.uk/",
+  },
+};
+
 const faqStructuredData = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

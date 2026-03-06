@@ -2,14 +2,24 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-// TODO: This article is a draft. Once the content is fully written and reviewed,
-// remove the `robots: noindex` line below and add this URL to sitemap.js.
 export const metadata = {
   title: "When to Use Leadership Workshops for Teams",
   description:
     "A guide to when team leadership workshops are the right intervention, and how to make sure they create lasting change rather than a one-day uplift.",
   alternates: { canonical: "/insights/when-to-use-leadership-workshops-for-teams" },
-  robots: { index: false, follow: true },
+  openGraph: {
+    title: "When to Use Leadership Workshops for Teams | The Leadership Method",
+    description:
+      "A guide to when team leadership workshops are the right intervention, and how to make sure they create lasting change rather than a one-day uplift.",
+    url: "https://www.theleadershipmethod.co.uk/insights/when-to-use-leadership-workshops-for-teams",
+    images: [{ url: "/images/Image-of-training-session.jpg", width: 1210, height: 1600, alt: "Leadership workshop in session" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "When to Use Leadership Workshops for Teams | The Leadership Method",
+    description: "A guide to when team leadership workshops are the right intervention, and how to make sure they create lasting change.",
+    images: [{ url: "/images/Image-of-training-session.jpg", alt: "Leadership workshop in session" }],
+  },
 };
 
 export default function WhenToUseLeadershipWorkshopsPage() {

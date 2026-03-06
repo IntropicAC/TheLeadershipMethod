@@ -9,7 +9,7 @@ import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import { contactContent, siteConfig } from "@/lib/constants";
 
-export default function Contact() {
+export default function Contact({ showHeading = true }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -113,14 +113,23 @@ export default function Contact() {
 
   return (
     <SectionWrapper id="contact" background="light">
-      <div className="text-center mb-12">
-        <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
-          {contactContent.title}
-        </h2>
-        <p className="text-brand-charcoal/70 dark:text-night-soft max-w-2xl mx-auto">
-          {contactContent.subtitle}
-        </p>
-      </div>
+      {showHeading && (
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
+            {contactContent.title}
+          </h2>
+          <p className="text-brand-charcoal/70 dark:text-night-soft max-w-2xl mx-auto">
+            {contactContent.subtitle}
+          </p>
+        </div>
+      )}
+      {!showHeading && (
+        <div className="text-center mb-12">
+          <p className="text-brand-charcoal/70 dark:text-night-soft max-w-2xl mx-auto">
+            {contactContent.subtitle}
+          </p>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {/* Contact Info */}

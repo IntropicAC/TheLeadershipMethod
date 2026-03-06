@@ -2,14 +2,24 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-// TODO: This article is a draft. Once the content is fully written and reviewed,
-// remove the `robots: noindex` line below and add this URL to sitemap.js.
 export const metadata = {
   title: "The Benefits of Leadership Coaching",
   description:
     "How 1:1 leadership coaching helps managers build self-awareness, improve team relationships, and lead with greater confidence and clarity.",
   alternates: { canonical: "/insights/benefits-of-leadership-coaching" },
-  robots: { index: false, follow: true },
+  openGraph: {
+    title: "The Benefits of Leadership Coaching | The Leadership Method",
+    description:
+      "How 1:1 leadership coaching helps managers build self-awareness, improve team relationships, and lead with greater confidence and clarity.",
+    url: "https://www.theleadershipmethod.co.uk/insights/benefits-of-leadership-coaching",
+    images: [{ url: "/images/Image-of-training-session.jpg", width: 1210, height: 1600, alt: "Leadership coaching session" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Benefits of Leadership Coaching | The Leadership Method",
+    description: "How 1:1 leadership coaching helps managers build self-awareness, improve team relationships, and lead with greater confidence.",
+    images: [{ url: "/images/Image-of-training-session.jpg", alt: "Leadership coaching session" }],
+  },
 };
 
 export default function BenefitsOfLeadershipCoachingPage() {

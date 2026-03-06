@@ -2,14 +2,24 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-// TODO: This article is a draft. Once the content is fully written and reviewed,
-// remove the `robots: noindex` line below and add this URL to sitemap.js.
 export const metadata = {
   title: "How to Improve Organisational Culture",
   description:
     "Practical, evidence-based approaches to diagnosing culture, identifying what needs to change, and building healthier workplace environments.",
   alternates: { canonical: "/insights/how-to-improve-organisational-culture" },
-  robots: { index: false, follow: true },
+  openGraph: {
+    title: "How to Improve Organisational Culture | The Leadership Method",
+    description:
+      "Practical, evidence-based approaches to diagnosing culture, identifying what needs to change, and building healthier workplace environments.",
+    url: "https://www.theleadershipmethod.co.uk/insights/how-to-improve-organisational-culture",
+    images: [{ url: "/images/Image-of-training-session.jpg", width: 1210, height: 1600, alt: "Organisational development session" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Improve Organisational Culture | The Leadership Method",
+    description: "Practical, evidence-based approaches to diagnosing culture, identifying what needs to change, and building healthier workplaces.",
+    images: [{ url: "/images/Image-of-training-session.jpg", alt: "Organisational development session" }],
+  },
 };
 
 export default function HowToImproveOrganisationalCulturePage() {

@@ -86,7 +86,7 @@ export default function ContactPage() {
         </div>
 
         {/* Reuse the existing Contact section component */}
-        <Contact />
+        <Contact showHeading={false} />
       </main>
       <Footer />
     </>

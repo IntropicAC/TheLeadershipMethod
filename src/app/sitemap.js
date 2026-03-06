@@ -50,25 +50,23 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-    // Insight articles are added here once they contain enough content to be indexed.
-    // Remove the noindex directive from each article page at the same time.
-    // {
-    //   url: `${SITE_URL}/insights/benefits-of-leadership-coaching`,
-    //   lastModified: new Date(),
-    //   changeFrequency: "yearly",
-    //   priority: 0.5,
-    // },
-    // {
-    //   url: `${SITE_URL}/insights/how-to-improve-organisational-culture`,
-    //   lastModified: new Date(),
-    //   changeFrequency: "yearly",
-    //   priority: 0.5,
-    // },
-    // {
-    //   url: `${SITE_URL}/insights/when-to-use-leadership-workshops-for-teams`,
-    //   lastModified: new Date(),
-    //   changeFrequency: "yearly",
-    //   priority: 0.5,
-    // },
+    {
+      url: `${SITE_URL}/insights/benefits-of-leadership-coaching`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/insights/how-to-improve-organisational-culture`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/insights/when-to-use-leadership-workshops-for-teams`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
   ];
 }

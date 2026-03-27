@@ -41,6 +41,7 @@ export default function WhyChooseUs() {
           );
         })}
       </div>
+
     </SectionWrapper>
   );
 }

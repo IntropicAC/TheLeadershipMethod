@@ -40,6 +40,35 @@ export default function About() {
               Assoc. CIPD
             </span>
           </div>
+
+          {/* Brainz Magazine contributor */}
+          <div className="mt-8 pt-6 border-t border-brand-nude dark:border-night-border flex items-center justify-center gap-2">
+            <span className="text-sm uppercase tracking-[0.18em] font-medium text-brand-charcoal/50 dark:text-night-soft whitespace-nowrap">
+              As featured in
+            </span>
+            <a
+              href="https://www.brainzmagazine.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Brainz Magazine — Contributor"
+              className="opacity-60 hover:opacity-100 transition-opacity duration-300"
+            >
+              <Image
+                src="/images/Black-Brainz-Magazine-Logo.png"
+                alt="Brainz Magazine"
+                width={320}
+                height={110}
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain dark:hidden"
+              />
+              <Image
+                src="/images/White-Brainz-Magazine-Logo.png"
+                alt="Brainz Magazine"
+                width={320}
+                height={110}
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain hidden dark:block"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </SectionWrapper>

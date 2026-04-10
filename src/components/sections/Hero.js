@@ -32,17 +32,19 @@ export default function Hero() {
         </div>
 
         {/* Primary H1 — keyword-rich for SEO */}
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal dark:text-night-text mb-3">
-          Leadership Coaching &amp; Organisational Development
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-charcoal dark:text-night-text mb-4">
+          {siteConfig.name}
         </h1>
 
-        {/* Brand name as prominent subheading */}
-        <p className="font-serif text-subheading font-semibold text-brand-charcoal/70 dark:text-night-soft mb-3">
-          {siteConfig.name}
+        <p className="mx-auto max-w-xl font-serif text-lg sm:text-2xl font-semibold leading-snug text-brand-charcoal/90 dark:text-night-text mb-4 sm:hidden">
+          Improving leadership and team culture by addressing behaviours behind performance issues.
         </p>
 
-        {/* Tagline */}
-        <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft mb-6 font-light italic">
+        <p className="mx-auto hidden max-w-2xl font-serif text-2xl font-semibold leading-snug text-brand-charcoal/85 dark:text-night-soft mb-4 sm:block">
+          Improving leadership and team culture by addressing the behaviours driving performance issues.
+        </p>
+
+        <p className="text-lg sm:text-xl text-brand-charcoal/80 dark:text-night-soft mb-7 font-light italic">
           {siteConfig.tagline}
         </p>
 

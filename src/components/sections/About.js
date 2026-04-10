@@ -15,7 +15,7 @@ export default function About() {
         <div className="overflow-hidden">
           <div className="relative float-left mr-7 mb-4 w-[130px] sm:w-[185px] md:w-[210px]">
             <Image
-              src="/images/priyanka-headshot.jpg"
+              src="/images/Priyanka-about-us.jpg"
               alt={`${siteConfig.founder} - Founder of ${siteConfig.name}`}
               width={210}
               height={263}

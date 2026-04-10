@@ -70,7 +70,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-8 items-start mb-6">
                 <div className="relative shrink-0 w-48 h-56 sm:w-40 sm:h-48">
                   <Image
-                    src="/images/priyanka-headshot.jpg"
+                    src="/images/Priyanka-about-us.jpg"
                     alt={`${siteConfig.founder}, Founder of ${siteConfig.name}`}
                     fill
                     className="object-cover rounded-lg shadow-lg"

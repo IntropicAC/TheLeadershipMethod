@@ -11,7 +11,7 @@ export const siteConfig = {
   instagram: "https://instagram.com/theleadershipmethod_",
   instagramHandle: "@theleadershipmethod_",
   linkedin: "https://www.linkedin.com/in/priyankaayodele/",
-  tagline: "Workshops | Coaching | Organisational Development",
+  tagline: "Coaching | Team Culture | Organisational Development",
 };
 
 export const aboutContent = {

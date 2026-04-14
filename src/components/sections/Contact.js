@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Instagram, Linkedin, Send, CheckCircle, Copy, Check } from "lucide-react";
+import { Mail, Phone, Instagram, Linkedin, Send, CheckCircle, Copy, Check } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
@@ -160,6 +160,20 @@ export default function Contact({ showHeading = true }) {
                     : <Copy size={16} aria-hidden="true" />
                   }
                 </button>
+              </a>
+
+              {/* Phone */}
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="flex items-center gap-4 p-4 bg-brand-cream dark:bg-night-raised rounded-lg hover:bg-brand-nude dark:hover:bg-night-muted transition-colors group"
+              >
+                <div className="w-12 h-12 bg-brand-nude dark:bg-night-muted group-hover:bg-white dark:group-hover:bg-night-border rounded-full flex items-center justify-center transition-colors">
+                  <Phone size={24} className="text-brand-charcoal dark:text-night-accent" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-sm text-brand-charcoal/60 dark:text-night-soft">Call us on</p>
+                  <p className="font-medium text-brand-charcoal dark:text-night-text">{siteConfig.phone}</p>
+                </div>
               </a>
 
               {/* Instagram */}

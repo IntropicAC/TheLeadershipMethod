@@ -8,6 +8,7 @@ export const siteConfig = {
   founder: "Priyanka Ayodele",
   credentials: "CMgr MCMI, Assoc. CIPD",
   email: "theleadershipmethod@gmail.com",
+  phone: "07944810751",
   instagram: "https://instagram.com/theleadershipmethod_",
   instagramHandle: "@theleadershipmethod_",
   linkedin: "https://www.linkedin.com/in/priyankaayodele/",

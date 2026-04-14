@@ -24,14 +24,14 @@ export const metadata = {
     template: "%s | The Leadership Method",
   },
   description:
-    "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
+    "Driving high-performance culture and strategic leadership across the UK. Bespoke coaching, workshops & organisational development — founded by Priyanka Ayodele. Call 07944810751.",
   authors: [{ name: "Priyanka Ayodele" }],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Leadership Coaching & Workshops | The Leadership Method",
     description:
-      "Evidence-based leadership coaching, workshops and organisational development support to help leaders and teams build healthier workplace cultures.",
+      "We partner with organisations to turn workforce insights into measurable performance outcomes. Evidence-based coaching, workshops & OD support — founded by Priyanka Ayodele (BSc, CMgr MCMI, Assoc CIPD). Call 07944810751.",
     siteName: "The Leadership Method",
     locale: "en_GB",
     type: "website",
@@ -50,7 +50,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Leadership Coaching & Workshops | The Leadership Method",
     description:
-      "Evidence-based leadership coaching, workshops and organisational development. Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
+      "Driving high-performance culture and strategic leadership. Bespoke OD coaching & workshops — founded by Priyanka Ayodele (BSc, CMgr MCMI, Assoc CIPD). Call 07944810751.",
     images: [
       {
         url: "/images/Image-of-training-session.jpg",

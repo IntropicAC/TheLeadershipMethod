@@ -5,7 +5,6 @@ export async function POST(request) {
     const body = await request.json();
     const { name, email, service, message } = body;
 
-    // Validate required fields
     if (!name || !email || !service || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
@@ -13,7 +12,6 @@ export async function POST(request) {
       );
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -22,40 +20,53 @@ export async function POST(request) {
       );
     }
 
-    // Here you would typically send the email using a service like:
-    // - Resend (recommended)
-    // - SendGrid
-    // - Nodemailer with SMTP
+    const accessKey =
+      process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
-    // For now, we'll log the submission and return success
-    // In production, replace this with actual email sending logic
+    if (!accessKey) {
+      console.error("Missing Web3Forms access key in server environment.");
+      return NextResponse.json(
+        { error: "Contact form is not configured on the server." },
+        { status: 500 }
+      );
+    }
 
-    console.log("Contact form submission:", {
-      name,
-      email,
-      service,
-      message,
-      timestamp: new Date().toISOString(),
+    const web3FormsResponse = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: `New Enquiry: ${service}`,
+        from_name: "The Leadership Method Website",
+        name,
+        email,
+        service,
+        message,
+        botcheck: "",
+      }),
+      cache: "no-store",
     });
 
-    // Example with Resend (uncomment and configure when ready):
-    /*
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const contentType = web3FormsResponse.headers.get("content-type") || "";
+    const rawBody = await web3FormsResponse.text();
+    const data = contentType.includes("application/json")
+      ? JSON.parse(rawBody)
+      : null;
 
-    await resend.emails.send({
-      from: 'website@theleadershipmethod.com',
-      to: 'theleadershipmethod@gmail.com',
-      subject: `New Enquiry: ${service}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Service Interest:</strong> ${service}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    });
-    */
+    if (!web3FormsResponse.ok || !data?.success) {
+      console.error("Web3Forms submission failed:", {
+        status: web3FormsResponse.status,
+        contentType,
+        body: rawBody.slice(0, 300),
+      });
+      return NextResponse.json(
+        { error: data?.message || "Failed to send message" },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json(
       { message: "Message sent successfully" },

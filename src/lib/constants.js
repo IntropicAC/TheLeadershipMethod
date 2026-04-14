@@ -1,6 +1,6 @@
 // Site content and configuration
 
-// Preferred canonical origin — must match the final non-redirecting URL
+// Preferred canonical origin - must match the final non-redirecting URL
 export const SITE_URL = "https://www.theleadershipmethod.co.uk";
 
 export const siteConfig = {
@@ -11,31 +11,32 @@ export const siteConfig = {
   instagram: "https://instagram.com/theleadershipmethod_",
   instagramHandle: "@theleadershipmethod_",
   linkedin: "https://www.linkedin.com/in/priyankaayodele/",
-  tagline: "Coaching | Team Culture | Organisational Development",
+  tagline: "Driving High-Performance Culture and Strategic Leadership",
 };
 
 export const aboutContent = {
   title: "About Us",
-  description: `Founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD), The Leadership Method draws on her Psychology degree, experience working in mental health, and organisational design and development to create effective leadership and a stronger organisational culture. Our work is evidence-based and helps organisations reduce hidden costs, improve retention, and increase performance by focusing on what matters: good management and healthy workplace cultures.`,
+  description: `Founded by Priyanka Ayodele (BSc, CMgr MCMI, Assoc CIPD). I specialise in Organisational Development that focuses on the behaviours that drive, or block performance. By combining my background in Psychology with OD experience in high-pressure environments, I provide evidence-based solutions that reduce hidden costs, boost retention, and improve performance.`,
+  description2: `I founded The Leadership Method to bridge the gap between workforce data and team culture. I provide your leaders with the strategic tools and confidence needed to turn performance strategy into high-value outcomes.`,
 };
 
 export const whyChooseUsContent = {
   title: "Why Choose Us?",
   items: [
     {
-      title: "Tailored Approach",
-      description: "Every workshop is tailored to the specific needs and dynamics of your team with no generic content.",
+      title: "Targeted Solutions",
+      description: "We align every session with your specific workforce data and strategic KPIs to ensure the content addresses and solves your business challenges.",
       icon: "Target",
     },
     {
-      title: "Psychology-Based",
-      description: "We blend psychology and evidence-based frameworks to understand behaviour, motivation, and culture.",
-      icon: "Brain",
+      title: "Sustainable Performance - ROI",
+      description: "We bridge the gap between management and frontline teams to ensure change isn't just a one-day event. We focus on long-term retention and reducing the hidden costs of misaligned leadership.",
+      icon: "TrendingUp",
     },
     {
-      title: "Practical & Sustainable",
-      description: "We work with both managers and teams to make change practical and sustainable.",
-      icon: "TrendingUp",
+      title: "Evidence-based Insight",
+      description: "We apply psychological insights and proven OD frameworks to understand team dynamics, drive motivation, and build a resilient, high-performance culture.",
+      icon: "Brain",
     },
   ],
 };
@@ -47,25 +48,24 @@ export const servicesContent = {
       title: "Workshops",
       icon: "Users",
       items: [
-        "Culture Reset and Values Alignment",
-        "Management and Leadership in Practice: Leading with Self and System Awareness",
+        "Culture Alignment and Values - Turning values into everyday behaviours that drive accountability and performance",
+        "Strategic Leadership in Practice - Equipping managers to lead effectively in high-pressure environments",
       ],
     },
     {
       title: "Coaching",
       icon: "MessageCircle",
       items: [
-        "1:1 Management and Leadership Coaching",
-        "Team coaching (up to 4 attendees)",
+        "1:1 Leadership Coaching - Focused on navigating change and leading difficult conversations",
+        "Team Coaching - Resolving friction and aligning leadership teams to deliver as one",
       ],
     },
     {
       title: "Organisational Support",
       icon: "Building2",
       items: [
-        "6-Month Departmental Culture Packages",
-        "Leadership and Engagement Diagnostics",
-        "Organisational Design and Strategy Support",
+        "6-12 Month Culture Packages - Combining diagnostics and coaching to embed long-term change",
+        "Diagnostics and Design - Using workforce data to identify barriers and redesign performance systems",
       ],
     },
   ],

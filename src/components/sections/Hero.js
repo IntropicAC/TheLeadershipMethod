@@ -37,15 +37,15 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto max-w-xl font-serif text-lg sm:text-2xl font-semibold leading-snug text-brand-charcoal/90 dark:text-night-text mb-4 sm:hidden">
-          Improving leadership and team culture by addressing behaviours behind performance issues.
+          Driving High-Performance Culture and Strategic Leadership
         </p>
 
         <p className="mx-auto hidden max-w-2xl font-serif text-2xl font-semibold leading-snug text-brand-charcoal/85 dark:text-night-soft mb-4 sm:block">
-          Improving leadership and team culture by addressing the behaviours driving performance issues.
+          Driving High-Performance Culture and Strategic Leadership
         </p>
 
         <p className="text-lg sm:text-xl text-brand-charcoal/80 dark:text-night-soft mb-7 font-light italic">
-          {siteConfig.tagline}
+          We partner with organisations to turn workforce insights<br />into measurable performance outcomes.
         </p>
 
         {/* CTA Button */}

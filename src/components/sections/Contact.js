@@ -65,38 +65,36 @@ export default function Contact({ showHeading = true }) {
     setIsSubmitting(true);
     setSubmitError(null);
 
-    const payload = {
-      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-      subject: `New Enquiry: ${formData.service}`,
-      from_name: "The Leadership Method Website",
-      ...formData,
-    };
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
-    console.log("[Contact] Submitting to Web3Forms:", {
-      ...payload,
-      access_key: payload.access_key ? "***set***" : "MISSING – check .env.local",
-    });
+    if (!accessKey) {
+      setSubmitError("Contact form is not configured. Please email us directly.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Enquiry: ${formData.service}`,
+          from_name: "The Leadership Method Website",
+          ...formData,
+        }),
       });
 
       const data = await response.json();
-      console.log("[Contact] Web3Forms response:", data);
 
-      if (data.success) {
-        console.log("[Contact] ✓ Email sent successfully");
+      if (response.ok && data.success) {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", service: "", message: "" });
       } else {
-        console.error("[Contact] ✗ Web3Forms error:", data.message);
         setSubmitError(data.message || "Something went wrong. Please try again or email us directly.");
       }
     } catch (err) {
-      console.error("[Contact] ✗ Network error:", err);
+      console.error("[Contact] Contact form request failed:", err);
       setSubmitError("Something went wrong. Please try again or email us directly.");
     } finally {
       setIsSubmitting(false);
@@ -224,7 +222,7 @@ export default function Contact({ showHeading = true }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Honeypot — hidden from humans, bots fill it in and Web3Forms rejects the submission */}
+              {/* Honeypot is hidden from humans; Web3Forms rejects submissions when bots fill it */}
               <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" readOnly />
 
               <Input

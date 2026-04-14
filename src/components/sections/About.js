@@ -28,6 +28,10 @@ export default function About() {
             {aboutContent.description}
           </p>
 
+          <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft leading-relaxed mt-4">
+            {aboutContent.description2}
+          </p>
+
           {/* clear-both ensures credentials always sit below the image */}
           <div className="clear-both flex flex-wrap gap-3 mt-6">
             <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">

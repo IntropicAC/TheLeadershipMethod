@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
@@ -68,14 +69,21 @@ export default function ServicesPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="block p-8 bg-brand-cream dark:bg-night-raised rounded-lg hover:bg-brand-nude dark:hover:bg-night-muted transition-colors group"
+                className="flex items-start justify-between gap-4 p-8 bg-white dark:bg-night-raised rounded-lg shadow-card border border-brand-nude/60 dark:border-night-border hover:shadow-card-hover hover:border-brand-charcoal/30 dark:hover:border-night-accent/40 transition-all group"
               >
-                <h2 className="font-serif text-subheading font-semibold text-brand-charcoal dark:text-night-text mb-2 group-hover:text-brand-charcoal-dark dark:group-hover:text-night-accent transition-colors">
-                  {service.title}
-                </h2>
-                <p className="text-brand-charcoal/70 dark:text-night-soft leading-relaxed">
-                  {service.description}
-                </p>
+                <div>
+                  <h2 className="font-serif text-subheading font-semibold text-brand-charcoal dark:text-night-text mb-2 group-hover:text-brand-charcoal-dark dark:group-hover:text-night-accent transition-colors">
+                    {service.title}
+                  </h2>
+                  <p className="text-brand-charcoal/70 dark:text-night-soft leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+                <ArrowRight
+                  size={20}
+                  className="shrink-0 mt-1 text-brand-charcoal/40 dark:text-night-soft group-hover:text-brand-charcoal dark:group-hover:text-night-accent group-hover:translate-x-0.5 transition-all"
+                  aria-hidden="true"
+                />
               </Link>
             ))}
           </div>

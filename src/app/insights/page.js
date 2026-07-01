@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
   title: "Insights on Leadership & Organisational Development",
@@ -12,7 +13,13 @@ export const metadata = {
     description:
       "Articles and perspectives on leadership coaching, organisational culture, and management development.",
     url: "https://www.theleadershipmethod.co.uk/insights",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "Insights on Leadership & Organisational Development | The Leadership Method",
+    description:
+      "Articles and perspectives on leadership coaching, organisational culture, and management development.",
+  }),
 };
 
 const articles = [
@@ -40,7 +47,7 @@ export default function InsightsPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/"

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/constants";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
   title: "Leadership Coaching for Managers & Executives",
@@ -13,7 +14,13 @@ export const metadata = {
     description:
       "1:1 and team leadership coaching grounded in psychology and evidence-based practice. Support for managers and leaders to grow with confidence and clarity.",
     url: "https://www.theleadershipmethod.co.uk/leadership-coaching",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "Leadership Coaching for Managers & Executives | The Leadership Method",
+    description:
+      "1:1 and team leadership coaching grounded in psychology and evidence-based practice. Support for managers and leaders to grow with confidence and clarity.",
+  }),
 };
 
 const coachingFaqs = [
@@ -57,7 +64,7 @@ export default function LeadershipCoachingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(coachingFaqSchema) }}
       />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/"

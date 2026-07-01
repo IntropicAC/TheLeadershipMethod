@@ -2,9 +2,10 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Contact from "@/components/sections/Contact";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
-  title: "Contact The Leadership Method",
+  title: "Contact",
   description:
     "Get in touch to discuss leadership coaching, workshops or organisational development support. We work with organisations and individuals across the UK.",
   alternates: { canonical: "/contact" },
@@ -13,7 +14,13 @@ export const metadata = {
     description:
       "Get in touch to discuss leadership coaching, workshops or organisational development support.",
     url: "https://www.theleadershipmethod.co.uk/contact",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "Contact The Leadership Method",
+    description:
+      "Get in touch to discuss leadership coaching, workshops or organisational development support.",
+  }),
 };
 
 const breadcrumbSchema = {
@@ -43,7 +50,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         {/* Intro header */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
           <Link

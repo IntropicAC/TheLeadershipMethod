@@ -21,6 +21,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/leadership-workshops`,
       lastModified: new Date(),
       changeFrequency: "monthly",

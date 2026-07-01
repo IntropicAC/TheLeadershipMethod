@@ -1,66 +1,58 @@
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
-import { siteConfig } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative h-[100svh] min-h-[100svh] w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/Image-of-training-session.jpg"
-          alt="Leadership training session"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-off-white/90 via-brand-off-white/70 to-brand-off-white/90 dark:from-night/95 dark:via-night/80 dark:to-night/95" />
-      </div>
+    <section className="relative w-full flex items-center bg-brand-cream dark:bg-night overflow-hidden pt-20 pb-10 sm:pt-24 sm:pb-12 lg:min-h-screen lg:py-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-x-20 lg:gap-y-8 items-center">
+          {/* Heading + copy */}
+          <div className="order-1 lg:order-1 lg:col-start-1 lg:row-start-1 max-w-xl mx-auto text-center lg:mx-0 lg:text-left">
+            <h1 className="font-serif text-2xl sm:text-5xl lg:text-6xl font-bold leading-[1.2] sm:leading-[1.1] text-brand-charcoal dark:text-night-text mb-3 sm:mb-6">
+              Leadership that changes how your organisation performs
+            </h1>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-24">
-        {/* Logo */}
-        <div className="mb-8 flex justify-center">
-          <Image
-            src="/images/Logo.jpg"
-            alt={siteConfig.name}
-            width={150}
-            height={150}
-            className="rounded-full shadow-lg"
-            priority
-          />
+            <p className="text-sm sm:text-xl text-brand-charcoal/75 dark:text-night-soft font-light leading-relaxed">
+              I help leaders and organisations move past what&apos;s holding them back, building stronger teams, healthier cultures, and leadership that lasts.
+            </p>
+          </div>
+
+          {/* Image */}
+          <div className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 relative w-full lg:max-w-full my-5 sm:my-6 lg:my-0">
+            <div className="relative aspect-[16/9] sm:aspect-[6/5] w-full rounded-lg shadow-xl overflow-hidden">
+              <Image
+                src="/images/Pri-working-on-laptop-image.jpg"
+                alt="Priyanka Ayodele, founder of The Leadership Method, working at her laptop"
+                fill
+                className="object-cover object-[center_40%] sm:object-[center_15%]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 40vw"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="order-3 lg:order-3 lg:col-start-1 lg:row-start-2 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto items-center lg:mx-0 lg:items-stretch">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 shadow-card px-6 py-2.5 sm:px-8 sm:py-3.5 text-sm sm:text-lg bg-brand-charcoal text-white hover:bg-brand-charcoal-dark dark:bg-night-accent dark:text-night dark:hover:bg-brand-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2 dark:focus-visible:ring-night-accent"
+            >
+              Work With Me
+            </a>
+            <a
+              href="#how-i-help"
+              className="inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 px-6 py-2.5 sm:px-8 sm:py-3.5 text-sm sm:text-lg border-2 border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-white dark:border-night-accent dark:text-night-accent dark:hover:bg-night-accent dark:hover:text-night focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2 dark:focus-visible:ring-night-accent"
+            >
+              Explore How I Help
+            </a>
+          </div>
         </div>
-
-        {/* Primary H1 — keyword-rich for SEO */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-charcoal dark:text-night-text mb-4">
-          {siteConfig.name}
-        </h1>
-
-        <p className="mx-auto max-w-xl font-serif text-lg sm:text-2xl font-semibold leading-snug text-brand-charcoal/90 dark:text-night-text mb-4 sm:hidden">
-          Driving High-Performance Culture and Strategic Leadership
-        </p>
-
-        <p className="mx-auto hidden max-w-2xl font-serif text-2xl font-semibold leading-snug text-brand-charcoal/85 dark:text-night-soft mb-4 sm:block">
-          Driving High-Performance Culture and Strategic Leadership
-        </p>
-
-        <p className="text-lg sm:text-xl text-brand-charcoal/80 dark:text-night-soft mb-7 font-light italic">
-          We partner with organisations to turn workforce insights<br />into measurable performance outcomes.
-        </p>
-
-        {/* CTA Button */}
-        <a
-          href="#contact"
-          className="inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 shadow-card px-8 py-3.5 text-lg bg-brand-charcoal text-white hover:bg-brand-charcoal-dark dark:bg-night-accent dark:text-night dark:hover:bg-brand-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2 dark:focus-visible:ring-night-accent"
-        >
-          Get in Touch
-        </a>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <a href="#about" aria-label="Scroll to about section">
-          <ChevronDown size={32} className="text-brand-charcoal/60" aria-hidden="true" />
+      <div className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <a href="#why-stuck" aria-label="Scroll to next section">
+          <ChevronDown size={32} className="text-brand-charcoal/60 dark:text-night-soft" aria-hidden="true" />
         </a>
       </div>
     </section>

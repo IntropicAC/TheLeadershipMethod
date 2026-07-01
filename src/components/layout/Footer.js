@@ -98,16 +98,33 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-700 dark:border-night-border text-center text-gray-400 dark:text-night-soft text-sm space-y-2">
-          <p>&copy; {currentYear} {siteConfig.name}. All rights reserved.</p>
-          <p>
-            <Link
-              href="/privacy"
-              className="hover:text-white transition-colors underline underline-offset-2"
-            >
-              Privacy Policy
-            </Link>
-          </p>
+        <div className="mt-12 pt-8 border-t border-gray-700 dark:border-night-border flex flex-col items-center gap-4 text-center text-gray-400 dark:text-night-soft text-sm">
+          <a
+            href="https://policybee.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Insured through PolicyBee"
+            className="opacity-80 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/images/policy-bee-insurance-badge.png"
+              alt="Insured through PolicyBee"
+              width={56}
+              height={56}
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+            />
+          </a>
+          <div className="space-y-2">
+            <p>&copy; {currentYear} {siteConfig.name}. All rights reserved.</p>
+            <p>
+              <Link
+                href="/privacy"
+                className="hover:text-white transition-colors underline underline-offset-2"
+              >
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

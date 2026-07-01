@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/constants";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
   title: "Organisational Development & Culture Support",
@@ -13,7 +14,13 @@ export const metadata = {
     description:
       "Culture diagnostics, departmental support packages and organisational design to build healthier, higher-performing workplaces.",
     url: "https://www.theleadershipmethod.co.uk/organisational-development",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "Organisational Development & Culture Support | The Leadership Method",
+    description:
+      "Culture diagnostics, departmental support packages and organisational design to build healthier, higher-performing workplaces.",
+  }),
 };
 
 const odFaqs = [
@@ -57,7 +64,7 @@ export default function OrganisationalDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(odFaqSchema) }}
       />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/"

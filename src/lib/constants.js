@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "The Leadership Method",
   founder: "Priyanka Ayodele",
   credentials: "CMgr MCMI, Assoc. CIPD",
-  email: "theleadershipmethod@gmail.com",
+  email: "priyanka@theleadershipmethod.co.uk",
   phone: "07944810751",
   instagram: "https://instagram.com/theleadershipmethod_",
   instagramHandle: "@theleadershipmethod_",
@@ -16,58 +16,60 @@ export const siteConfig = {
 };
 
 export const aboutContent = {
-  title: "About Us",
-  description: `Founded by Priyanka Ayodele (BSc, CMgr MCMI, Assoc CIPD). I specialise in Organisational Development that focuses on the behaviours that drive, or block performance. By combining my background in Psychology with OD experience in high-pressure environments, I provide evidence-based solutions that reduce hidden costs, boost retention, and improve performance.`,
-  description2: `I founded The Leadership Method to bridge the gap between workforce data and team culture. I provide your leaders with the strategic tools and confidence needed to turn performance strategy into high-value outcomes.`,
+  title: "Why Work With Me",
+  description: `I founded The Leadership Method to bridge the gap between workforce data and team culture. My background in Psychology and my experience in organisational development shape how I work: I look beyond the surface to understand the behaviours that really drive, or block, performance.`,
+  description2: `I don't believe in generic training. Every programme I design is evidence-based and built around your organisation's specific people, pressures, and goals.`,
+  credentials: ["Psychology Degree", "CMgr MCMI", "Assoc. CIPD"],
 };
 
-export const whyChooseUsContent = {
-  title: "Why Choose Us?",
+export const whyStuckContent = {
+  title: "Why Organisations Get Stuck",
+  intro: "Most performance problems aren't a strategy problem. They're a leadership and culture problem.",
   items: [
     {
-      title: "Targeted Solutions",
-      description: "We align every session with your specific workforce data and strategic KPIs to ensure the content addresses and solves your business challenges.",
-      icon: "Target",
+      title: "Misaligned leadership",
+      description: "Leaders pulling in different directions, without a shared standard for how the organisation should be led.",
     },
     {
-      title: "Sustainable Performance - ROI",
-      description: "We bridge the gap between management and frontline teams to ensure change isn't just a one-day event. We focus on long-term retention and reducing the hidden costs of misaligned leadership.",
-      icon: "TrendingUp",
+      title: "Culture that stalls change",
+      description: "New strategies and values that never make it into everyday behaviour on the ground.",
     },
     {
-      title: "Evidence-based Insight",
-      description: "We apply psychological insights and proven OD frameworks to understand team dynamics, drive motivation, and build a resilient, high-performance culture.",
-      icon: "Brain",
+      title: "Teams stuck in friction",
+      description: "Unresolved tension between teams or individuals that quietly drains time, trust and performance.",
+    },
+    {
+      title: "Change that doesn't stick",
+      description: "Restructures and initiatives that create short-term disruption but no lasting improvement.",
     },
   ],
 };
 
-export const servicesContent = {
-  title: "Services",
-  services: [
+export const howIHelpContent = {
+  title: "How I Help",
+  intro: "Every organisation is different. My support is tailored to the people, challenges and goals in front of you.",
+  exploreLabel: "Explore All Services",
+  exploreHref: "/services",
+  items: [
     {
-      title: "Workshops",
-      icon: "Users",
-      items: [
-        "Culture Alignment and Values - Turning values into everyday behaviours that drive accountability and performance",
-        "Strategic Leadership in Practice - Equipping managers to lead effectively in high-pressure environments",
-      ],
+      title: "Strategic Leadership",
+      description: "Supporting leaders to lead with clarity and consistency, translating strategy into decisions and behaviour that hold up under pressure.",
     },
     {
-      title: "Coaching",
-      icon: "MessageCircle",
-      items: [
-        "1:1 Leadership Coaching - Focused on navigating change and leading difficult conversations",
-        "Team Coaching - Resolving friction and aligning leadership teams to deliver as one",
-      ],
+      title: "Team Alignment",
+      description: "Helping teams resolve friction, rebuild trust, and work towards a shared standard of performance and accountability.",
     },
     {
-      title: "Organisational Support",
-      icon: "Building2",
-      items: [
-        "6-12 Month Culture Packages - Combining diagnostics and coaching to embed long-term change",
-        "Diagnostics and Design - Using workforce data to identify barriers and redesign performance systems",
-      ],
+      title: "Organisational Change",
+      description: "Guiding organisations through restructures, transitions and change programmes so they embed rather than stall.",
+    },
+    {
+      title: "Culture & Behaviour",
+      description: "Turning values into everyday behaviour, using evidence-based insight to understand what is really driving your culture.",
+    },
+    {
+      title: "Workshops & Facilitation",
+      description: "Designing and facilitating bespoke sessions that give leaders and teams the tools to apply new thinking immediately.",
     },
   ],
 };
@@ -147,9 +149,9 @@ export const contactContent = {
 };
 
 export const navLinks = [
+  { label: "Why Organisations Get Stuck", href: "#why-stuck" },
+  { label: "How I Help", href: "#how-i-help" },
   { label: "About", href: "#about" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Services", href: "#services" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },

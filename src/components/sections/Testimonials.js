@@ -78,7 +78,7 @@ export default function Testimonials() {
   /* ── No-JS / SSR: static grid ──────────────────────────────────────────── */
   if (!mounted) {
     return (
-      <SectionWrapper id="testimonials" background="cream">
+      <SectionWrapper id="testimonials" background="cream" className="border-b border-brand-charcoal/20 dark:border-night-border">
         <div className="text-center mb-12">
           <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
             {testimonialsContent.title}
@@ -97,7 +97,7 @@ export default function Testimonials() {
 
   /* ── JS-enhanced: carousel ─────────────────────────────────────────────── */
   return (
-    <SectionWrapper id="testimonials" background="cream">
+    <SectionWrapper id="testimonials" background="cream" className="border-b border-brand-charcoal/20 dark:border-night-border">
       <div className="text-center mb-12">
         <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-4">
           {testimonialsContent.title}

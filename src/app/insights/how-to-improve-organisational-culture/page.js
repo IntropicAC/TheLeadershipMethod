@@ -26,7 +26,7 @@ export default function HowToImproveOrganisationalCulturePage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/insights"

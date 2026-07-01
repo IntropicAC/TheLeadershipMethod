@@ -11,7 +11,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen flex items-center justify-center px-4">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen flex items-center justify-center px-4">
         <div className="text-center max-w-md">
           <p className="font-serif text-display font-bold text-brand-nude dark:text-night-border leading-none mb-6">
             404

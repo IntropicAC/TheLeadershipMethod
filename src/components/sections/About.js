@@ -4,50 +4,55 @@ import { aboutContent, siteConfig } from "@/lib/constants";
 
 export default function About() {
   return (
-    <SectionWrapper id="about" background="cream">
+    <SectionWrapper id="about" background="light">
       <div className="max-w-3xl mx-auto">
-        {/* Heading sits above everything, full width */}
-        <h2 className="font-serif text-heading font-bold text-brand-charcoal dark:text-night-text mb-6">
+        {/* Mobile: heading on its own line, image floats left with smaller text wrapping around it. Desktop: side-by-side grid. */}
+        <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal dark:text-night-text mb-4 md:hidden">
           {aboutContent.title}
         </h2>
 
-        {/* Float container — image floats left, text wraps beside and below it */}
-        <div className="overflow-hidden">
-          <div className="relative float-left mr-7 mb-4 w-[130px] sm:w-[185px] md:w-[210px]">
+        <div className="md:grid md:grid-cols-2 md:gap-10 md:items-center">
+          <div className="relative float-left mr-5 mb-3 w-36 sm:w-48 md:float-none md:mr-0 md:mb-0 md:w-full md:max-w-xs md:mx-auto lg:mx-0 aspect-[4/5]">
             <Image
-              src="/images/Priyanka-about-us.jpg"
-              alt={`${siteConfig.founder} - Founder of ${siteConfig.name}`}
-              width={210}
-              height={263}
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
+              src="/images/notebook-writing-top-down-view.jpg"
+              alt={`${siteConfig.founder} making notes`}
+              fill
+              className="object-cover rounded-lg shadow-xl"
+              sizes="(max-width: 768px) 40vw, 30vw"
             />
-            <div className="absolute inset-0 -bottom-3 -right-3 -z-10 border-2 border-brand-nude dark:border-night-border rounded-lg" />
           </div>
 
-          <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft leading-relaxed">
-            {aboutContent.description}
-          </p>
+          <div>
+            <h2 className="hidden md:block font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal dark:text-night-text mb-4">
+              {aboutContent.title}
+            </h2>
 
-          <p className="text-body-lg text-brand-charcoal/80 dark:text-night-soft leading-relaxed mt-4">
-            {aboutContent.description2}
-          </p>
+            <p className="text-sm md:text-base text-brand-charcoal/80 dark:text-night-soft leading-relaxed">
+              {aboutContent.description}
+            </p>
 
-          {/* clear-both ensures credentials always sit below the image */}
-          <div className="clear-both flex flex-wrap gap-3 mt-6">
-            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
-              Psychology Degree
-            </span>
-            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
-              CMgr MCMI
-            </span>
-            <span className="px-4 py-2 bg-brand-nude dark:bg-night-muted rounded-full text-sm font-medium text-brand-charcoal dark:text-night-text">
-              Assoc. CIPD
-            </span>
+            <p className="text-sm md:text-base text-brand-charcoal/80 dark:text-night-soft leading-relaxed mt-3">
+              {aboutContent.description2}
+            </p>
+          </div>
+        </div>
+
+        {/* clear-both ensures badges/logo always sit below the floated image on mobile */}
+        <div className="clear-both md:clear-none">
+          <div className="flex flex-wrap gap-2 mt-5">
+            {aboutContent.credentials.map((credential) => (
+              <span
+                key={credential}
+                className="px-3 py-1.5 bg-brand-nude dark:bg-night-muted rounded-full text-xs font-medium text-brand-charcoal dark:text-night-text"
+              >
+                {credential}
+              </span>
+            ))}
           </div>
 
           {/* Brainz Magazine contributor */}
-          <div className="mt-8 pt-6 border-t border-brand-nude dark:border-night-border flex items-center justify-center gap-2">
-            <span className="text-sm uppercase tracking-[0.18em] font-medium text-brand-charcoal/50 dark:text-night-soft whitespace-nowrap">
+          <div className="mt-6 pt-5 border-t border-brand-nude dark:border-night-border flex items-center justify-center gap-3">
+            <span className="text-xs md:text-sm uppercase tracking-[0.18em] font-medium text-brand-charcoal/50 dark:text-night-soft whitespace-nowrap">
               As featured in
             </span>
             <a
@@ -62,14 +67,14 @@ export default function About() {
                 alt="Brainz Magazine"
                 width={320}
                 height={110}
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain dark:hidden"
+                className="h-10 md:h-14 w-auto object-contain dark:hidden"
               />
               <Image
                 src="/images/White-Brainz-Magazine-Logo.png"
                 alt="Brainz Magazine"
                 width={320}
                 height={110}
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain hidden dark:block"
+                className="h-10 md:h-14 w-auto object-contain hidden dark:block"
               />
             </a>
           </div>

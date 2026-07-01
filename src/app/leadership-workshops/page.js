@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/constants";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
   title: "Leadership Workshops for Teams & Organisations",
@@ -13,7 +14,13 @@ export const metadata = {
     description:
       "Bespoke leadership and management workshops tailored to your team. Build self-awareness, strengthen culture, and develop leadership capability.",
     url: "https://www.theleadershipmethod.co.uk/leadership-workshops",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "Leadership Workshops for Teams & Organisations | The Leadership Method",
+    description:
+      "Bespoke leadership and management workshops tailored to your team. Build self-awareness, strengthen culture, and develop leadership capability.",
+  }),
 };
 
 const workshopFaqs = [
@@ -57,7 +64,7 @@ export default function LeadershipWorkshopsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(workshopFaqSchema) }}
       />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/"

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { Inter, Playfair_Display } from "next/font/google";
+import { DEFAULT_OG_IMAGE, DEFAULT_TWITTER_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,27 +37,14 @@ export const metadata = {
     locale: "en_GB",
     type: "website",
     url: SITE_URL + "/",
-    images: [
-      {
-        url: "/images/Image-of-training-session.jpg",
-        width: 1210,
-        height: 1600,
-        alt: "The Leadership Method, leadership training session",
-        type: "image/jpeg",
-      },
-    ],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Leadership Coaching & Workshops | The Leadership Method",
     description:
       "Driving high-performance culture and strategic leadership. Bespoke OD coaching & workshops — founded by Priyanka Ayodele (BSc, CMgr MCMI, Assoc CIPD). Call 07944810751.",
-    images: [
-      {
-        url: "/images/Image-of-training-session.jpg",
-        alt: "Leadership training session facilitated by The Leadership Method",
-      },
-    ],
+    images: [DEFAULT_TWITTER_IMAGE],
   },
   icons: {
     icon: [
@@ -102,7 +90,8 @@ const structuredData = {
         width: 150,
         height: 150,
       },
-      email: "theleadershipmethod@gmail.com",
+      email: "priyanka@theleadershipmethod.co.uk",
+      telephone: "+447944810751",
       description:
         "Evidence-based leadership coaching, workshops and organisational development.",
       sameAs: [
@@ -122,7 +111,8 @@ const structuredData = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer enquiries",
-        email: "theleadershipmethod@gmail.com",
+        email: "priyanka@theleadershipmethod.co.uk",
+        telephone: "+447944810751",
         availableLanguage: "English",
       },
       founder: {
@@ -195,7 +185,7 @@ const structuredData = {
       about: { "@id": `${SITE_URL}/#organisation` },
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/Image-of-training-session.jpg`,
+        url: `${SITE_URL}/images/Pri-working-on-laptop-image.jpg`,
       },
       inLanguage: "en-GB",
     },

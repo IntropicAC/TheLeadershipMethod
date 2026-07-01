@@ -3,9 +3,10 @@ import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/lib/constants";
+import { DEFAULT_OG_IMAGE, createTwitterMetadata } from "@/lib/seo";
 
 export const metadata = {
-  title: "About Priyanka Ayodele & The Leadership Method",
+  title: "About Priyanka Ayodele",
   description:
     "Meet Priyanka Ayodele (CMgr MCMI, Assoc. CIPD), founder of The Leadership Method. Evidence-based leadership coaching, workshops and organisational development rooted in psychology.",
   alternates: { canonical: "/about" },
@@ -14,7 +15,13 @@ export const metadata = {
     description:
       "Evidence-based leadership coaching, workshops and organisational development founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
     url: "https://www.theleadershipmethod.co.uk/about",
+    images: [DEFAULT_OG_IMAGE],
   },
+  twitter: createTwitterMetadata({
+    title: "About Priyanka Ayodele & The Leadership Method",
+    description:
+      "Evidence-based leadership coaching, workshops and organisational development founded by Priyanka Ayodele (CMgr MCMI, Assoc. CIPD).",
+  }),
 };
 
 const breadcrumbSchema = {
@@ -44,7 +51,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <main id="main-content" className="bg-brand-off-white dark:bg-night min-h-screen">
+      <main id="main-content" className="bg-brand-cream dark:bg-night min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Link
             href="/"
@@ -68,12 +75,12 @@ export default function AboutPage() {
               </h2>
 
               <div className="flex flex-col sm:flex-row gap-8 items-start mb-6">
-                <div className="relative shrink-0 w-48 h-56 sm:w-40 sm:h-48">
+                <div className="relative shrink-0 w-48 h-64 sm:w-40 sm:h-56">
                   <Image
                     src="/images/Priyanka-about-us.jpg"
                     alt={`${siteConfig.founder}, Founder of ${siteConfig.name}`}
                     fill
-                    className="object-cover rounded-lg shadow-lg"
+                    className="object-cover object-top rounded-lg shadow-lg"
                     sizes="(max-width: 640px) 192px, 160px"
                   />
                 </div>

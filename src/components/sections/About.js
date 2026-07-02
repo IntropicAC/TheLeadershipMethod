@@ -51,16 +51,16 @@ export default function About() {
           </div>
 
           {/* Brainz Magazine contributor */}
-          <div className="mt-6 pt-5 border-t border-brand-nude dark:border-night-border flex items-center justify-center gap-3">
+          <div className="mt-6 pt-5 border-t border-brand-nude dark:border-night-border flex flex-col items-center justify-center gap-2">
             <span className="text-xs md:text-sm uppercase tracking-[0.18em] font-medium text-brand-charcoal/50 dark:text-night-soft whitespace-nowrap">
               As featured in
             </span>
             <a
-              href="https://www.brainzmagazine.com"
+              href="https://www.brainzmagazine.com/executive-contributor/priyanka-ayodele"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Brainz Magazine — Contributor"
-              className="opacity-60 hover:opacity-100 transition-opacity duration-300"
+              aria-label={`Read ${siteConfig.founder}'s Executive Contributor profile on Brainz Magazine`}
+              className="group flex flex-col items-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
                 src="/images/Black-Brainz-Magazine-Logo.png"
@@ -76,6 +76,9 @@ export default function About() {
                 height={110}
                 className="h-10 md:h-14 w-auto object-contain hidden dark:block"
               />
+              <span className="text-[11px] md:text-xs font-medium text-brand-charcoal dark:text-night-text underline decoration-brand-charcoal/30 dark:decoration-night-text/30 underline-offset-2 group-hover:decoration-brand-charcoal dark:group-hover:decoration-night-text transition-colors">
+                Read my Executive Contributor profile →
+              </span>
             </a>
           </div>
         </div>

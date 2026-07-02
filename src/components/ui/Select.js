@@ -21,6 +21,7 @@ export default function Select({
       )}
       <select
         id={id}
+        suppressHydrationWarning
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(

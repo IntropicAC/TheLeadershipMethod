@@ -21,6 +21,7 @@ export default function Textarea({
       <textarea
         id={id}
         rows={rows}
+        suppressHydrationWarning
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(

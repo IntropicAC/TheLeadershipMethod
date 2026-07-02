@@ -74,14 +74,14 @@ export default function AboutPage() {
                 Meet {siteConfig.founder}
               </h2>
 
-              <div className="flex flex-col sm:flex-row gap-8 items-start mb-6">
-                <div className="relative shrink-0 w-48 h-64 sm:w-40 sm:h-56">
+              <div className="overflow-hidden mb-6 sm:flex sm:gap-8 sm:items-start">
+                <div className="relative float-left mr-5 mb-3 w-32 sm:float-none sm:mr-0 sm:mb-0 sm:shrink-0 sm:w-40 aspect-[3/4] sm:h-56 sm:aspect-auto">
                   <Image
                     src="/images/Priyanka-about-us.jpg"
                     alt={`${siteConfig.founder}, Founder of ${siteConfig.name}`}
                     fill
                     className="object-cover object-top rounded-lg shadow-lg"
-                    sizes="(max-width: 640px) 192px, 160px"
+                    sizes="(max-width: 640px) 128px, 160px"
                   />
                 </div>
                 <div>

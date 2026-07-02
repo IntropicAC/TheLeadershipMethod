@@ -13,7 +13,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-sm sm:text-xl text-brand-charcoal/75 dark:text-night-soft font-light leading-relaxed">
-              I help leaders and organisations move past what&apos;s holding them back, building stronger teams, healthier cultures, and leadership that lasts.
+              I help organisations improve performance through stronger leadership, healthier cultures and sustainable organisational change. Every approach is built around your organisation&apos;s people, challenges and goals.
             </p>
           </div>
 

@@ -17,7 +17,7 @@ export const siteConfig = {
 
 export const aboutContent = {
   title: "Why Work With Me",
-  description: `I founded The Leadership Method to bridge the gap between workforce data and team culture. My background in Psychology and my experience in organisational development shape how I work: I look beyond the surface to understand the behaviours that really drive, or block, performance.`,
+  description: `I founded The Leadership Method to bridge the gap between workforce data and team culture. I combine organisational development expertise with behavioural insight to uncover what's driving, or blocking, performance.`,
   description2: `I don't believe in generic training. Every programme I design is evidence-based and built around your organisation's specific people, pressures, and goals.`,
   credentials: ["Psychology Degree", "CMgr MCMI", "Assoc. CIPD"],
 };

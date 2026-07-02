@@ -237,7 +237,7 @@ export default function Contact({ showHeading = true }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot is hidden from humans; Web3Forms rejects submissions when bots fill it */}
-              <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" readOnly />
+              <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" readOnly suppressHydrationWarning />
 
               <Input
                 label="Name"

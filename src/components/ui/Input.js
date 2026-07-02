@@ -21,6 +21,7 @@ export default function Input({
       <input
         id={id}
         type={type}
+        suppressHydrationWarning
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
